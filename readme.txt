@@ -1,0 +1,22 @@
+Python 2.7.13
+
+Flask	0.12.2
+Flask-DebugToolbar	0.10.1
+Flask-SQLAlchemy	2.2
+Jinja2	2.9.6
+MarkupSafe	1.0
+SQLAlchemy	1.1.14
+Werkzeug	0.12.2
+blinker	1.4
+certifi	2017.7.27.1
+chardet	3.0.4
+click	6.7
+idna	2.6
+itsdangerous	0.24
+jsonify	0.5
+pip	9.0.1
+requests	2.18.4
+setuptools	36.5.0
+urllib3	1.22
+wheel	0.30.0
+wsgiref	0.1.2
