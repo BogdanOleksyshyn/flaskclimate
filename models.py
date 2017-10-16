@@ -26,7 +26,7 @@ class SensorData(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     value = db.Column(db.Float)
     time = db.Column(db.DateTime, default=datetime.utcnow())
-    sensortype_id = db.Column(db.Integer, db.ForeignKey('sensor_type.id'))
+    sensor_type_id = db.Column(db.Integer, db.ForeignKey('sensor_type.id'))
 
     def __repr__(self):
-        return "<SensorData {}:{} - {}, sensortype_id: {}>".format(self.id, self.value, self.time, self.sensortype_id)
+        return "<SensorData {}:{} - {}, sensor_type_id: {}>".format(self.id, self.value, self.time, self.sensor_type_id)

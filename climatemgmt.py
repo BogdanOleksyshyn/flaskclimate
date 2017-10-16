@@ -21,9 +21,9 @@ toolbar = DebugToolbarExtension(app)
 @app.route('/index')
 def index():
     # TODO change sensortype_id on sensortype_name
-    co2_level = models.SensorData.query.filter_by(sensortype_id=1)[-1]
-    temperature = models.SensorData.query.filter_by(sensortype_id=2)[-1]
-    humidity = models.SensorData.query.filter_by(sensortype_id=3)[-1]
+    co2_level = models.SensorData.query.filter_by(sensor_type_id=1)[-1]
+    temperature = models.SensorData.query.filter_by(sensor_type_id=2)[-1]
+    humidity = models.SensorData.query.filter_by(sensor_type_id=3)[-1]
 
     return render_template('index.html', co2_level=co2_level, temperature=temperature, humidity=humidity)
 
@@ -64,10 +64,10 @@ def sensordata():
         return Response(json.dumps(sensor_data_list),  mimetype='application/json')
     if request.method == 'POST':
         if request.args:
-            sensortype_id = int(request.args['sensortype_id'])
+            sensor_type_id = int(request.args['sensor_type_id'])
             value = float(request.args['value'])
             time = datetime.datetime.utcnow()
-            sensor_data = models.SensorData(value=value, time=time, sensortype_id=sensortype_id)
+            sensor_data = models.SensorData(value=value, time=time, sensor_type_id=sensor_type_id)
             db.session.add(sensor_data)
             db.session.commit()
         return Response(json.dumps([]), mimetype='application/json')
